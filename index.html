@@ -14,7 +14,11 @@ title: Home
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
-    {{ post.content }}
+    {{ post.excerpt }}  <!-- 仅输出摘要 -->
+    <!-- 可选：添加「阅读更多」链接，指向文章详情页 -->
+    <p class="read-more">
+      <a href="{{ post.url | relative_url }}">阅读全文 →</a>
+    </p>
   </div>
   {% endfor %}
 </div>
