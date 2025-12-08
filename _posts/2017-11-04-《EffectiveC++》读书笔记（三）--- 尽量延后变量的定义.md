@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《EffectiveC++》读书笔记（三）--- 尽量延后变量的定义
+title: "《EffectiveC++》读书笔记（三）--- 尽量延后变量的定义"
 date: 2017-11-04
 ---
 

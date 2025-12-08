@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 批量数据导入Redis（Mass Insertion）
+title: "批量数据导入Redis（Mass Insertion）"
 date: 2017-07-18
 ---
 

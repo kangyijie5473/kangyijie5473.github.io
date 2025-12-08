@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【大牛第一步】安装chrome，利用google学习，开启github之旅
+title: "【大牛第一步】安装chrome，利用google学习，开启github之旅"
 date: 2017-05-21
 ---
 

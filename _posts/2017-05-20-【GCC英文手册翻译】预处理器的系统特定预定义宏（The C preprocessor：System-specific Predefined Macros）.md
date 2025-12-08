@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【GCC英文手册翻译】预处理器的系统特定预定义宏（The C preprocessor：System-specific Predefined Macros）
+title: "【GCC英文手册翻译】预处理器的系统特定预定义宏（The C preprocessor：System-specific Predefined Macros）"
 date: 2017-05-20
 ---
 

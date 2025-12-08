@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Zookeeper集群模式无法部署云服务器【java.net.BindException: 无法指定被请求的地址 (Bind failed)】的解决
+title: "Zookeeper集群模式无法部署云服务器【java.net.BindException: 无法指定被请求的地址 (Bind failed)】的解决"
 date: 2017-08-05
 ---
 

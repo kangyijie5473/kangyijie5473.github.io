@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Redis的embstr与raw编码方式不再以39字节为界了！
+title: "Redis的embstr与raw编码方式不再以39字节为界了！"
 date: 2017-09-20
 ---
 

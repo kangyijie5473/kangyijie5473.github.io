@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 简单点，switch-case的结构简单点～ C语言学习（4）
+title: "简单点，switch-case的结构简单点～ C语言学习（4）"
 date: 2016-07-27
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【MYSQL必知必会】长期append常用命令
+title: "【MYSQL必知必会】长期append常用命令"
 date: 2018-07-22
 ---
 

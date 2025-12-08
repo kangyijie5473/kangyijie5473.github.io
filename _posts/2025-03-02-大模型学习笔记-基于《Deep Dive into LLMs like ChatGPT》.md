@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 大模型学习笔记-基于《Deep Dive into LLMs like ChatGPT》
+title: "大模型学习笔记-基于《Deep Dive into LLMs like ChatGPT》"
 date: 2025-03-02
 ---
 

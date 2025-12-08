@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【无脑教程】Fedora & CentOS下coredump文件生成方法
+title: "【无脑教程】Fedora & CentOS下coredump文件生成方法"
 date: 2017-05-19
 ---
 

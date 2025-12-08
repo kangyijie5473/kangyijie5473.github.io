@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [UVA]11988 - Broken Keyboard (a.k.a. Beiju Text) 题解 及一点点感想
+title: "[UVA]11988 - Broken Keyboard (a.k.a. Beiju Text) 题解 及一点点感想"
 date: 2017-08-09
 ---
 

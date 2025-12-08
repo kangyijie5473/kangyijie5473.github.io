@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【浅谈守护进程】Demo：后台监控程序-- Python实现
+title: "【浅谈守护进程】Demo：后台监控程序-- Python实现"
 date: 2017-05-24
 ---
 

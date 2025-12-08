@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 无脑利用gsettings修改截图默认保存位置
+title: "无脑利用gsettings修改截图默认保存位置"
 date: 2017-05-01
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Redis-cluster集群傻瓜配置+Python操作集群小demo
+title: "Redis-cluster集群傻瓜配置+Python操作集群小demo"
 date: 2017-04-30
 ---
 
