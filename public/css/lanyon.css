@@ -556,3 +556,23 @@ a.pagination-item:hover {
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
 }
+
+/* Mermaid 图表样式（适配 Lanyon） */
+.mermaid {
+  margin: 2em 0;
+  padding: 1em;
+  background: #f9f9f9;
+  border-radius: 4px;
+  overflow: auto;
+}
+/* 兼容代码块样式，避免冲突 */
+pre code.language-mermaid {
+  display: none; /* 隐藏原代码块（已被前端替换） */
+}
+/* 响应式适配，移动端自动缩放 */
+@media (max-width: 768px) {
+  .mermaid {
+    padding: 0.5em;
+    font-size: 0.8em;
+  }
+}
