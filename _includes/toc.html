@@ -1,0 +1,39 @@
+<!-- _includes/toc.html -->
+{% comment %} 提取文章中的 H1-H6 标题，生成目录 {% endcomment %}
+{% assign content_with_ids = content %}
+{% assign headings = content | split: '<h' %}
+{% assign toc_list = '' | split: '' %}
+
+{% for heading in headings %}
+  {% if heading != '' %}
+    {% assign level = heading | slice: 0, 1 | plus: 0 %}
+    {% if level >= 1 and level <= 6 %}
+      {% assign heading_parts = heading | split: '>' %}
+      {% assign title = heading_parts[1] | split: '</h' | first | strip_html %}
+      {% assign slug = title | slugify %} <!-- 生成锚点ID（和Jekyll默认一致） -->
+      
+      {% if title != '' %}
+        {% assign toc_item = {
+          "level": level,
+          "title": title,
+          "slug": slug
+        } %}
+        {% assign toc_list = toc_list | push: toc_item %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} 只有存在标题时才显示目录 {% endcomment %}
+{% if toc_list.size > 0 %}
+  <div class="toc-container">
+    <h3 class="toc-title">📋 文章目录</h3>
+    <ul class="toc-list">
+      {% for item in toc_list %}
+        <li class="toc-item toc-level-{{ item.level }}">
+          <a href="#{{ item.slug }}" class="toc-link">{{ item.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
