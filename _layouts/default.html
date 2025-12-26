@@ -105,6 +105,9 @@
     const tocLinks = document.querySelectorAll('.toc-link');
     const headings = document.querySelectorAll('.post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6');
     const backToTop = document.querySelector('.back-to-top');
+    const postToc = document.querySelector('.post-toc');
+    const contentContainer = document.querySelector('.post-page .container.content');
+    const postContent = document.querySelector('.post-content');
 
     // 监听滚动事件
     window.addEventListener('scroll', function() {
@@ -129,6 +132,21 @@
         else backToTop.classList.remove('show');
       }
     });
+
+    function layoutToc() {
+      if (!postToc || !contentContainer || !postContent) return;
+      const desktop = window.innerWidth >= 1024;
+      if (desktop) {
+        const rect = contentContainer.getBoundingClientRect();
+        postToc.style.left = `${rect.left + window.scrollX}px`;
+        postContent.style.marginLeft = `${postToc.offsetWidth + 32}px`;
+      } else {
+        postToc.style.left = '';
+        postContent.style.marginLeft = '';
+      }
+    }
+    layoutToc();
+    window.addEventListener('resize', layoutToc);
 
     tocLinks.forEach(link => {
       link.addEventListener('click', function(e) {

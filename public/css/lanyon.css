@@ -665,12 +665,14 @@ pre code.language-mermaid {
 
 @media (min-width: 1024px) {
   .post-layout { gap: 2rem; }
-  .post-toc { flex-basis: 280px; position: sticky; top: 2rem; align-self: flex-start; }
+  .post-toc { flex-basis: 280px; width: 280px; position: fixed; top: 2rem; align-self: flex-start; }
+  .post-toc .toc-container { max-height: calc(100vh - 3rem); overflow-y: auto; overscroll-behavior: contain; padding-right: 4px; }
 }
 
 @media (max-width: 1023px) {
   .post-layout { flex-direction: column; }
-  .post-toc { flex-basis: auto; width: 100%; }
+  .post-toc { flex-basis: auto; width: 100%; position: static; }
+  .post-toc .toc-container { max-height: none; overflow: visible; }
 }
 
 .back-to-top {
