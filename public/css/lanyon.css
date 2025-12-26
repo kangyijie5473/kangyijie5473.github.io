@@ -672,3 +672,33 @@ pre code.language-mermaid {
   .post-layout { flex-direction: column; }
   .post-toc { flex-basis: auto; width: 100%; }
 }
+
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #eee;
+  border-radius: 999px;
+  background: #fff;
+  color: #505050;
+  font-size: 1.1rem;
+  line-height: 2.4rem;
+  text-align: center;
+  box-shadow: 0 .25rem .5rem rgba(0,0,0,.08);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease, box-shadow .2s ease, color .2s ease, background .2s ease;
+}
+.back-to-top:hover {
+  color: #268bd2;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.12);
+}
+.back-to-top.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
