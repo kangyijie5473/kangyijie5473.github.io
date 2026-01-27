@@ -335,20 +335,38 @@ a.sidebar-nav-item:focus {
 .related-posts {
   padding-left: 0;
   list-style: none;
+  margin: 0;
 }
-.related-posts h3 {
-  margin-top: 0;
+.related-item {
+  margin-bottom: 0.5rem;
 }
-.related-posts li small {
-  font-size: 75%;
-  color: #999;
-}
-.related-posts li a:hover {
-  color: #268bd2;
+.related-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  background-color: transparent;
+  border-left: 3px solid #eee;
+  transition: all 0.2s ease;
   text-decoration: none;
 }
-.related-posts li a:hover small {
-  color: inherit;
+.related-link:hover {
+  background-color: #f8f9fa;
+  border-left-color: #268bd2;
+  text-decoration: none;
+}
+.related-title {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #313131;
+  margin-bottom: 0.25rem;
+}
+.related-link:hover .related-title {
+  color: #268bd2;
+}
+.related-date {
+  display: block;
+  font-size: 0.85rem;
+  color: #999;
 }
 
 
@@ -366,6 +384,72 @@ a.sidebar-nav-item:focus {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
   color: #ccc;
   text-align: center;
+}
+
+/* Post Metadata */
+.post-meta {
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
+  color: #9a9a9a;
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.post-meta .post-date {
+  display: inline;
+  margin: 0;
+}
+.post-tags, .post-stats {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.post-tag {
+  color: #9a9a9a;
+  text-decoration: none;
+  border-bottom: 1px dotted #ccc;
+  transition: all 0.2s;
+}
+.post-tag:hover {
+  color: #268bd2;
+  border-bottom-color: #268bd2;
+}
+
+/* Copy Code Button */
+.highlight {
+  position: relative;
+}
+.copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 4px 8px;
+  border: 1px solid #e1e4e8;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #586069;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, background-color 0.2s;
+  z-index: 10;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.highlight:hover .copy-btn {
+  opacity: 1;
+}
+.copy-btn:hover {
+  background-color: #f6f8fa;
+  border-color: #d1d5da;
+  color: #24292e;
+}
+.copy-btn.copied {
+  background-color: #28a745;
+  color: white;
+  border-color: #28a745;
 }
 
 /* Pagination items can be `span`s or `a`s */
