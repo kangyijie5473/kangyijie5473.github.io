@@ -1,12 +1,15 @@
 ---
 layout: post
-title: AI infra学习总结-初探训练/推理/量化
+title: AI infra学习总结-初探训练
 date: 2026-01-23
-tags: [Algorithm, AI, Life, Redis]
+tags: [Algorithm, AI, Training]
 description: "总结下最近一个多月的学习。"
 ---
+
 总结下最近一个多月的学习。
+
 <!-- more -->
+
 ## 背景
 之前感觉LLM相关的概念词汇特别多，通过最近一个多月的学习感觉终于摸到一些门路。因此希望总结下。
 其实LLM也是一种模型，因此很多概念其实并不是在LLM出来后才有的，只是惯用的手法，当然这有一些是针对LLM做的，比如kvcache。只不过没有接触过机器学习/深度学习的人，会感觉怎么LLM带来这么多新知识。
