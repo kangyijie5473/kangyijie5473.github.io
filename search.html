@@ -1,0 +1,216 @@
+---
+layout: page
+title: Search
+permalink: /search/
+---
+
+<div class="search-page">
+  <div class="search-box">
+    <input type="text" id="search-input" placeholder="输入关键词搜索文章..." autocomplete="off">
+    <div class="search-icon">🔍</div>
+  </div>
+  
+  <div id="search-results" class="search-results"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  let posts = [];
+
+  // Fetch search index
+  fetch('{{ "/search.json" | relative_url }}')
+    .then(response => response.json())
+    .then(data => {
+      posts = data;
+    })
+    .catch(err => console.error('Error fetching search index:', err));
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      return;
+    }
+
+    const results = posts.filter(post => {
+      const titleMatch = post.title && post.title.toLowerCase().includes(query);
+      const tagsMatch = post.tags && post.tags.toLowerCase().includes(query);
+      const contentMatch = post.content && post.content.toLowerCase().includes(query);
+      return titleMatch || tagsMatch || contentMatch;
+    });
+
+    displayResults(results, query);
+  });
+
+  function displayResults(results, query) {
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p class="no-results">没有找到相关文章。</p>';
+      return;
+    }
+
+    let html = '<ul class="result-list">';
+    results.forEach(post => {
+      const title = highlightText(post.title, query);
+      const snippet = getSnippet(post.content, query);
+      
+      html += `
+        <li>
+          <a href="${post.url}">
+            <div class="result-title">${title}</div>
+            <div class="result-meta">
+              <span class="result-date">${post.date}</span>
+              <span class="result-tags">${post.tags ? '🏷️ ' + highlightText(post.tags, query) : ''}</span>
+            </div>
+            <div class="result-excerpt">${snippet}</div>
+          </a>
+        </li>
+      `;
+    });
+    html += '</ul>';
+    searchResults.innerHTML = html;
+  }
+
+  function highlightText(text, query) {
+    if (!text) return '';
+    const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
+    return text.replace(regex, '<span class="highlight">$1</span>');
+  }
+
+  function getSnippet(content, query) {
+    if (!content) return '';
+    const index = content.toLowerCase().indexOf(query);
+    const contextLength = 60; // chars before and after
+
+    if (index === -1) {
+      return content.slice(0, 120) + '...';
+    }
+
+    const start = Math.max(0, index - contextLength);
+    const end = Math.min(content.length, index + query.length + contextLength);
+    
+    let snippet = content.slice(start, end);
+    if (start > 0) snippet = '...' + snippet;
+    if (end < content.length) snippet = snippet + '...';
+
+    return highlightText(snippet, query);
+  }
+
+  function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+});
+</script>
+
+<style>
+.search-box {
+  position: relative;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#search-input {
+  width: 100%;
+  padding: 12px 20px;
+  padding-right: 40px;
+  font-size: 16px;
+  border: 2px solid #e1e4e8;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  outline: none;
+  background-color: #f8f9fa;
+}
+
+#search-input:focus {
+  border-color: #268bd2;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(38, 139, 210, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #adb5bd;
+}
+
+.result-list {
+  list-style: none;
+  padding: 0;
+}
+
+.result-list li {
+  margin-bottom: 1.2rem;
+}
+
+.result-list a {
+  display: block;
+  padding: 1.2rem;
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.result-list a:hover {
+  border-color: #268bd2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.result-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.4rem;
+}
+
+.result-list a:hover .result-title {
+  color: #268bd2;
+}
+
+.result-meta {
+  font-size: 0.85rem;
+  color: #868e96;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+}
+
+.result-tags {
+  margin-left: 10px;
+  background: #f1f3f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.result-excerpt {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.no-results {
+  text-align: center;
+  color: #868e96;
+  margin-top: 3rem;
+  font-size: 1.1rem;
+}
+
+.highlight {
+  background-color: #fff3cd;
+  color: #856404;
+  font-weight: bold;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+</style>

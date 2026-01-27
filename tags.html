@@ -1,0 +1,134 @@
+---
+layout: page
+title: Tags
+permalink: /tags/
+---
+
+<div class="tags-page">
+  <!-- 标签云区域 -->
+  <ul class="tag-cloud">
+    {% assign sorted_tags = site.tags | sort %}
+    {% for tag in sorted_tags %}
+    <li>
+      <a href="#{{ tag[0] | slugify }}" class="tag-link">
+        {{ tag[0] }} <span class="tag-count">({{ tag[1].size }})</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <hr>
+
+  <!-- 标签对应的文章列表 -->
+  <div class="tag-list">
+    {% for tag in sorted_tags %}
+    <div class="tag-section">
+      <h3 id="{{ tag[0] | slugify }}" class="tag-header">
+        <span class="tag-name">{{ tag[0] }}</span>
+      </h3>
+      <ul class="posts-by-tag">
+        {% for post in tag[1] %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <span class="post-date">{{ post.date | date_to_string }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+/* 标签云样式 */
+.tag-cloud {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tag-link {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 20px;
+  color: #495057;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.tag-link:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+  color: #212529;
+  text-decoration: none;
+}
+
+.tag-count {
+  font-size: 0.8em;
+  color: #868e96;
+  margin-left: 4px;
+}
+
+/* 文章列表样式 */
+.tag-section {
+  margin-bottom: 2rem;
+}
+
+.tag-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.posts-by-tag {
+  list-style: none;
+  padding-left: 0.5rem;
+}
+
+.posts-by-tag li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed #f0f0f0;
+}
+
+.posts-by-tag li:last-child {
+  border-bottom: none;
+}
+
+.posts-by-tag a {
+  color: #268bd2; /* Lanyon blue */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.posts-by-tag a:hover {
+  text-decoration: underline;
+}
+
+.post-date {
+  font-size: 0.85rem;
+  color: #999;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+/* 移动端适配 */
+@media (max-width: 600px) {
+  .posts-by-tag li {
+    flex-direction: column;
+  }
+  .post-date {
+    margin-left: 0;
+    margin-top: 0.2rem;
+  }
+}
+</style>

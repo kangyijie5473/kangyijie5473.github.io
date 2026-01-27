@@ -1,7 +1,7 @@
 # Setup
 title:               Kangkang's blog
 tagline:             'My blog including articles from 2016 to now'
-description:         'A reserved <a href="https://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
+description:         '康艺杰的个人博客。分享后端技术以及我的生活与思考。'
 url:                 https://kangyijie5473.github.io
 baseurl:             ''
 paginate:            5
