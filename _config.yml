@@ -20,6 +20,11 @@ kramdown:
 # 3. 保留分页配置（之前的）
 plugins:
   - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Google Search Console Verification
+google_site_verification: "googleb6b2e5814431f392" # 需填写: 从 Google Search Console 获取的验证码
 
 # Giscus Comments Configuration
 giscus:
