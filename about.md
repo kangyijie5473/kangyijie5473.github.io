@@ -3,27 +3,49 @@ layout: page
 title: About
 ---
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
-</p>
+## 👋 关于我
 
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+我是康艺杰，一名拥有 6 年经验的后端研发工程师。热衷于分布式系统、大数据处理以及高可用架构设计。
 
-There are currently two themes built on Poole:
+目前专注于服务端基础架构领域，曾在腾讯和字节跳动负责过大规模 Redis 集群托管平台以及 TikTok 工程数仓建设与风险管理平台的研发工作。
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+## 🛠 技术栈
 
-Learn more and contribute on [GitHub](https://github.com/poole).
+- **编程语言**: Golang, C/C++, Python
+- **基础领域**: Linux 系统编程, 网络编程
+- **中间件/存储**: Redis, MySQL, NoSQL, 分布式系统
+- **大数据**: Spark, Kafka, Hive, PySpark, HiveSQL (ETL)
+- **语言能力**: 英语 (CET-6)
 
-## Setup
+## 💼 工作经历
 
-Some fun facts about the setup of this project include:
+### 字节跳动 (2022.04 - 2025.10)
 
-* Built for [Jekyll](https://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Atom](https://atom.io)
+主要负责 **TikTok 工程数据仓库** 与 **服务端风险管理平台** 的建设：
 
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
+- **工程数仓建设**: 构建了包含机器、网络、计算、存储等多维度的 Infra 资源离线数仓，支撑成本优化、预算填报及风险巡检等业务。
+- **海外全链路 ETL**: 搭建跨机房、跨合规区域的数据汇聚链路，确保数据合规传输。
+- **数据治理**: 制定质量指标，实施旁路数据抽样对比与熔断策略，保障数据质量。
+- **网络带宽建设**: 整合物理链路与业务打点数据，实现分组件、分业务维度的带宽数据下钻分析。
+- **风险管理平台**: 
+    - **混沌演练**: 支持 CPU/内存/网络等维度的故障模拟，提供自定义编排与方案模版。
+    - **风险巡检**: 结合工单系统实现风险发现与修复的闭环管理。
 
-Thanks for reading!
+### 腾讯 (2019.07 - 2022.04)
+
+负责 **Redis 托管平台** 的研发，承接 PCG 内部业务需求，支撑日请求量 3万亿级的超大规模集群：
+
+- **整体架构**: 维护基于服务端 Proxy 的分布式架构，支持主从部署与异地多活。
+- **扩展性**: 支持在线水平/垂直扩容，优化 Redis 内核（多线程模型）提升单进程吞吐量。
+- **成本优化**: 实施冷热数据分离策略，将冷数据回写 SSD，仅保留热点数据在内存中，在对业务透明的前提下节省了约 80% 的内存成本。
+
+## 🎓 教育背景
+
+- **西安邮电大学** (2015.09 - 2019.06)
+  - 计算机科学与技术 / 本科
+
+## 📫 联系方式
+
+- **Email**: [815143609@qq.com](mailto:815143609@qq.com)
+- **GitHub**: [https://github.com/kangyijie5473](https://github.com/kangyijie5473)
+- **Blog**: [https://kangyijie5473.github.io/](https://kangyijie5473.github.io/)
