@@ -6,6 +6,13 @@
 
   {% seo %}
 
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
   <link rel="stylesheet" href="{{ '/public/css/poole.css' | absolute_url }}">
   <link rel="stylesheet" href="{{ '/public/css/syntax.css' | absolute_url }}">
   <link rel="stylesheet" href="{{ '/public/css/lanyon.css' | absolute_url }}">

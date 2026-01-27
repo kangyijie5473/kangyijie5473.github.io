@@ -13,6 +13,115 @@
  * https://github.com/poole/poole.
  */
 
+/* Dark Mode Variables */
+:root {
+  --bg-color: #fff;
+  --text-color: #515151;
+  --heading-color: #313131;
+  --link-color: #268bd2;
+  --strong-color: #303030;
+  --border-color: #eee;
+  --hr-border: #eee;
+  --hr-border-bottom: #fff;
+  --code-bg: #f9f9f9;
+  --code-color: #bf616a;
+  --pre-bg: #f9f9f9;
+  --blockquote-border: #e5e5e5;
+  --blockquote-text: #7a7a7a;
+  --table-border: #e5e5e5;
+  --table-stripe: #f9f9f9;
+  --message-bg: #f9f9f9;
+  --message-color: #717171;
+  
+  /* Layout specific variables (Lanyon) */
+  --masthead-title-color: #505050;
+  --masthead-small-color: #c0c0c0;
+  --masthead-border: #eee;
+  --post-date-color: #9a9a9a;
+  --related-border: #eee;
+  --related-item-border: #eee;
+  --related-item-bg: #fafafa;
+  --related-item-hover-bg: #fff;
+  --related-item-hover-border: #e0e0e0;
+  --related-small-color: #999;
+  --pagination-color: #ccc;
+  --pagination-border: #eee;
+  --pagination-hover-bg: #f5f5f5;
+  --pagination-active-bg: #313131;
+  --pagination-active-color: #fff;
+  --toc-bg: #f9f9f9;
+  --toc-border: #eee;
+  --toc-title-color: #333;
+  --toc-link-color: #505050;
+  --toc-link-hover-bg: #f5f5f5;
+  --toc-link-active-bg: #eef6ff;
+  --toc-link-active-color: #000;
+  --mermaid-bg: #f9f9f9;
+  --back-to-top-bg: #fff;
+  --back-to-top-color: #505050;
+  --back-to-top-border: #eee;
+  --sidebar-bg: #202020;
+  --sidebar-text: rgba(255,255,255,.6);
+  --sidebar-link: #fff;
+  --sidebar-border: rgba(255,255,255,.1);
+  --sidebar-toggle-bg: #fff;
+  --sidebar-toggle-color: #505050;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #c9d1d9;
+  --heading-color: #f0f6fc;
+  --link-color: #58a6ff;
+  --strong-color: #f0f6fc;
+  --border-color: #30363d;
+  --hr-border: #30363d;
+  --hr-border-bottom: transparent;
+  --code-bg: #2d333b;
+  --code-color: #ff7b72;
+  --pre-bg: #2d333b;
+  --blockquote-border: #30363d;
+  --blockquote-text: #8b949e;
+  --table-border: #30363d;
+  --table-stripe: #22272e;
+  --message-bg: #22272e;
+  --message-color: #8b949e;
+  
+  /* Layout specific overrides */
+  --masthead-title-color: #f0f6fc;
+  --masthead-small-color: #8b949e;
+  --masthead-border: #30363d;
+  --post-date-color: #8b949e;
+  --related-border: #30363d;
+  --related-item-border: #30363d;
+  --related-item-bg: #22272e;
+  --related-item-hover-bg: #2d333b;
+  --related-item-hover-border: #58a6ff;
+  --related-small-color: #8b949e;
+  --pagination-color: #8b949e;
+  --pagination-border: #30363d;
+  --pagination-hover-bg: #2d333b;
+  --pagination-active-bg: #58a6ff;
+  --pagination-active-color: #fff;
+  --toc-bg: #22272e;
+  --toc-border: #30363d;
+  --toc-title-color: #f0f6fc;
+  --toc-link-color: #8b949e;
+  --toc-link-hover-bg: #2d333b;
+  --toc-link-active-bg: #1f6feb; /* Darker blue */
+  --toc-link-active-color: #fff;
+  --mermaid-bg: #2d333b;
+  --back-to-top-bg: #22272e;
+  --back-to-top-color: #8b949e;
+  --back-to-top-border: #30363d;
+  --sidebar-bg: #161b22;
+  --sidebar-text: #8b949e;
+  --sidebar-link: #f0f6fc;
+  --sidebar-border: #30363d;
+  --sidebar-toggle-bg: #22272e;
+  --sidebar-toggle-color: #8b949e;
+}
+
 
 /*
  * Contents
@@ -59,15 +168,15 @@ html {
 }
 
 body {
-  color: #515151;
-  background-color: #fff;
+  color: var(--text-color);
+  background-color: var(--bg-color);
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
-  color: #268bd2;
+  color: var(--link-color);
   text-decoration: none;
 }
 a strong {
@@ -84,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
   font-weight: bold;
   line-height: 1.25;
-  color: #313131;
+  color: var(--heading-color);
   text-rendering: optimizeLegibility;
 }
 h1 {
@@ -110,7 +219,7 @@ p {
 }
 
 strong {
-  color: #303030;
+  color: var(--strong-color);
 }
 
 
@@ -132,8 +241,8 @@ hr {
   position: relative;
   margin: 1.5rem 0;
   border: 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #fff;
+  border-top: 1px solid var(--hr-border);
+  border-bottom: 1px solid var(--hr-border-bottom);
 }
 
 abbr {
@@ -155,8 +264,8 @@ pre {
 code {
   padding: .25em .5em;
   font-size: 85%;
-  color: #bf616a;
-  background-color: #f9f9f9;
+  color: var(--code-color);
+  background-color: var(--code-bg);
   border-radius: 3px;
 }
 pre {
@@ -170,7 +279,7 @@ pre {
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #f9f9f9;
+  background-color: var(--pre-bg);
 }
 pre code {
   padding: 0;
@@ -214,8 +323,8 @@ pre code {
 blockquote {
   padding: .5rem 1rem;
   margin: .8rem 0;
-  color: #7a7a7a;
-  border-left: .25rem solid #e5e5e5;
+  color: var(--blockquote-text);
+  border-left: .25rem solid var(--blockquote-border);
 }
 blockquote p:last-child {
   margin-bottom: 0;
@@ -238,17 +347,17 @@ img {
 table {
   margin-bottom: 1rem;
   width: 100%;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--table-border);
   border-collapse: collapse;
 }
 td,
 th {
   padding: .25rem .5rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--table-border);
 }
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
-  background-color: #f9f9f9;
+  background-color: var(--table-stripe);
 }
 
 
@@ -274,8 +383,8 @@ tbody tr:nth-child(odd) th {
 .message {
   margin-bottom: 1rem;
   padding: 1rem;
-  color: #717171;
-  background-color: #f9f9f9;
+  color: var(--message-color);
+  background-color: var(--message-bg);
 }
 
 
@@ -291,140 +400,4 @@ tbody tr:nth-child(odd) th {
   padding-right: 1rem;
   margin-left:  auto;
   margin-right: auto;
-}
-
-
-/*
- * Masthead
- *
- * Super small header above the content for site name and short description.
- */
-
-.masthead {
-  padding-top:    1rem;
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
-}
-.masthead-title {
-  margin-top: 0;
-  margin-bottom: 0;
-  color: #505050;
-}
-.masthead-title a {
-  color: #505050;
-}
-.masthead-title small {
-  font-size: 75%;
-  font-weight: 400;
-  color: #c0c0c0;
-  letter-spacing: 0;
-}
-
-
-/*
- * Posts and pages
- *
- * Each post is wrapped in `.post` and is used on default and post layouts. Each
- * page is wrapped in `.page` and is only used on the page layout.
- */
-
-.page,
-.post {
-  margin-bottom: 4em;
-}
-
-/* Blog post or page title */
-.page-title,
-.post-title,
-.post-title a {
-  color: #303030;
-}
-.page-title,
-.post-title {
-  margin-top: 0;
-}
-
-/* Meta data line below post title */
-.post-date {
-  display: block;
-  margin-top: -.5rem;
-  margin-bottom: 1rem;
-  color: #9a9a9a;
-}
-
-/* Related posts */
-.related {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  border-top: 1px solid #eee;
-}
-.related-posts {
-  padding-left: 0;
-  list-style: none;
-}
-.related-posts h3 {
-  margin-top: 0;
-}
-.related-posts li small {
-  font-size: 75%;
-  color: #999;
-}
-.related-posts li a:hover {
-  color: #268bd2;
-  text-decoration: none;
-}
-.related-posts li a:hover small {
-  color: inherit;
-}
-
-
-/*
- * Pagination
- *
- * Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
- * there are no more previous or next posts to show.
- */
-
-.pagination {
-  overflow: hidden; /* clearfix */
-  margin-left: -1rem;
-  margin-right: -1rem;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
-  color: #ccc;
-  text-align: center;
-}
-
-/* Pagination items can be `span`s or `a`s */
-.pagination-item {
-  display: block;
-  padding: 1rem;
-  border: 1px solid #eee;
-}
-.pagination-item:first-child {
-  margin-bottom: -1px;
-}
-
-/* Only provide a hover state for linked pagination items */
-a.pagination-item:hover {
-  background-color: #f5f5f5;
-}
-
-@media (min-width: 30em) {
-  .pagination {
-    margin: 3rem 0;
-  }
-  .pagination-item {
-    float: left;
-    width: 50%;
-  }
-  .pagination-item:first-child {
-    margin-bottom: 0;
-    border-top-left-radius:    4px;
-    border-bottom-left-radius: 4px;
-  }
-  .pagination-item:last-child {
-    margin-left: -1px;
-    border-top-right-radius:    4px;
-    border-bottom-right-radius: 4px;
-  }
 }
