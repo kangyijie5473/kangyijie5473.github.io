@@ -24,18 +24,44 @@ title: Home
 </div>
 
 <div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | absolute_url }}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
   {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ '/' | absolute_url }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ paginator.previous_page_path | absolute_url }}">Newer</a>
-    {% endif %}
+    <a class="pagination-item newer" href="{{ paginator.previous_page_path | absolute_url }}">Prev</a>
   {% else %}
-    <span class="pagination-item newer">Newer</span>
+    <span class="pagination-item newer">Prev</span>
+  {% endif %}
+
+  {% assign prev_page = 0 %}
+  {% for page in (1..paginator.total_pages) %}
+    {% assign show_page = false %}
+    {% if page <= 5 %}
+      {% assign show_page = true %}
+    {% elsif page == paginator.total_pages %}
+      {% assign show_page = true %}
+    {% elsif page == paginator.page %}
+      {% assign show_page = true %}
+    {% endif %}
+
+    {% if show_page %}
+      {% assign diff = page | minus: prev_page %}
+      {% if diff > 1 %}
+        <span class="pagination-item pagination-ellipsis">...</span>
+      {% endif %}
+
+      {% if page == paginator.page %}
+        <span class="pagination-item current">{{ page }}</span>
+      {% elsif page == 1 %}
+        <a class="pagination-item" href="{{ '/' | absolute_url }}">{{ page }}</a>
+      {% else %}
+        <a class="pagination-item" href="{{ site.paginate_path | relative_url | replace: ':num', page | absolute_url }}">{{ page }}</a>
+      {% endif %}
+
+      {% assign prev_page = page %}
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ paginator.next_page_path | absolute_url }}">Next</a>
+  {% else %}
+    <span class="pagination-item older">Next</span>
   {% endif %}
 </div>
