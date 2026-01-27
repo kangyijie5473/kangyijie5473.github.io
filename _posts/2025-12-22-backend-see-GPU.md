@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 后端开发如何理解GPU
+title: "[WIP]后端开发如何理解GPU"
 date: 2025-12-22
 tags: [Network, Linux]
 description: "接着上篇理解「模型」，这次来理解下计算机的GPU和硬件设备。"
