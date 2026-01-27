@@ -20,3 +20,13 @@ kramdown:
 # 3. 保留分页配置（之前的）
 plugins:
   - jekyll-paginate
+
+# Giscus Comments Configuration
+giscus:
+  repo: kangyijie5473/kangyijie5473.github.io
+  repo_id: "R_kgDOQikTUA" # 需填写: 请访问 https://giscus.app 获取
+  category: "General" # 需填写: Discussion 分类名
+  category_id: "DIC_kwDOQikTUM4C1ewp"
+  mapping: pathname
+  theme: light
+  lang: zh-CN

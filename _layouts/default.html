@@ -107,7 +107,7 @@
     const backToTop = document.querySelector('.back-to-top');
     const postToc = document.querySelector('.post-toc');
     const contentContainer = document.querySelector('.post-page .container.content');
-    const postContent = document.querySelector('.post-content');
+    const postContent = document.querySelector('.post-main') || document.querySelector('.post-content');
 
     // 监听滚动事件
     window.addEventListener('scroll', function() {

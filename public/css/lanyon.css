@@ -650,7 +650,7 @@ pre code.language-mermaid {
 .post-toc .toc-container {
   margin: 0;
 }
-.post-content {
+.post-main {
   flex: 1 1 auto;
   min-width: 0;
 }
@@ -660,7 +660,7 @@ pre code.language-mermaid {
 }
 
 @media (min-width: 1024px) {
-  .post-content { max-width: 46rem; }
+  .post-main { max-width: 46rem; }
 }
 
 @media (min-width: 1024px) {
@@ -673,6 +673,7 @@ pre code.language-mermaid {
   .post-layout { flex-direction: column; }
   .post-toc { flex-basis: auto; width: 100%; position: static; }
   .post-toc .toc-container { max-height: none; overflow: visible; }
+  .post-content { max-width: 100%; }
 }
 
 .back-to-top {
