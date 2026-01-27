@@ -304,7 +304,7 @@ a.sidebar-nav-item:focus {
 
 .page,
 .post {
-  margin-bottom: 4em;
+  margin-bottom: 2em; /* Reduced from 4em */
 }
 
 /* Blog post or page title */
@@ -316,6 +316,13 @@ a.sidebar-nav-item:focus {
 .page-title,
 .post-title {
   margin-top: 0;
+  font-size: 1.5rem; /* Reduced size */
+}
+@media (min-width: 38em) {
+  .page-title,
+  .post-title {
+    font-size: 1.75rem; /* Slightly larger on desktop but still reduced */
+  }
 }
 
 /* Meta data line below post title */
