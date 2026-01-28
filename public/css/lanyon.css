@@ -103,6 +103,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0;
   color: var(--masthead-title-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .masthead-title a {
   color: var(--masthead-title-color);
@@ -113,13 +116,32 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--masthead-small-color);
   letter-spacing: 0;
 }
+.masthead-nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.masthead-nav a {
+  color: var(--masthead-small-color);
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+.masthead-nav a:hover {
+  color: var(--link-color);
+}
 
 @media (max-width: 48em) {
   .masthead-title {
     text-align: center;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   .masthead-title small {
     display: none;
+  }
+  .masthead-nav {
+    margin-top: 0.5rem;
   }
 }
 

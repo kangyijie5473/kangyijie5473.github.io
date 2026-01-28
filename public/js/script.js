@@ -16,15 +16,16 @@
   // Copy Code Button Logic
   document.addEventListener('DOMContentLoaded', function() {
     // Dark Mode Toggle Logic
-    var toggleBtn = document.getElementById('theme-toggle');
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', function() {
+    var toggleBtns = document.querySelectorAll('#theme-toggle, #header-theme-toggle');
+    
+    toggleBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
         var currentTheme = document.documentElement.getAttribute('data-theme');
         var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
       });
-    }
+    });
 
     // Select all code blocks (adjust selectors based on your Jekyll theme's output)
     var codeBlocks = document.querySelectorAll('div.highlight');
