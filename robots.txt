@@ -1,0 +1,4 @@
+Sitemap: https://kangyijie5473.github.io/sitemap.xml
+
+User-agent: *
+Disallow:
